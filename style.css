@@ -1,146 +1,162 @@
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #0a1a33; /* deep navy */
-  color: #e6e6e6;
-  line-height: 1.6;
+/* ---------- Base ---------- */
+:root{
+  --navy:#0a1a33;
+  --navy-dark:#071122;
+  --card:#12284a;
+  --card-hover:#16325c;
+  --teal:#00b3b3;          /* matches your logo accent */
+  --teal-dark:#009999;
+  --text:#e6e6e6;
+  --text-dim:#b5b5b5;
+  --white:#ffffff;
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 20px;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--navy);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Logo */
-.logo {
-  max-width: 60px; /* reduced from 150px */
-  height: auto;
-  margin-bottom: 10px;
+.container{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(135deg,var(--navy) 0%, var(--navy-dark) 100%);
+  padding:64px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
-@media (max-width: 600px) {
-  .logo {
-    max-width: 60px; /* reduced from 120px */
-  }
+.hero-inner{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+.logo{
+  width:96px;       /* reduced size */
+  height:auto;
+  flex:0 0 auto;
+}
+.hero h1{
+  margin:0 0 6px;
+  font-size:2.25rem;
+  font-weight:700;
+  letter-spacing:.3px;
+  color:var(--teal);
+}
+.tagline{
+  margin:0 0 16px;
+  color:var(--text-dim);
+  font-size:1.05rem;
 }
 
-/* Animations */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
+/* ---------- Sections ---------- */
+.section{padding:56px 0}
+.section.alt{background:var(--navy-dark)}
+.section-title{
+  margin:0 0 16px;
+  font-size:1.6rem;
+  color:var(--teal);
 }
-.fade-in.show { opacity: 1; transform: translateY(0); }
-.slide-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-.slide-up.show { opacity: 1; transform: translateY(0); }
-
-/* Hero */
-.hero {
-  background: linear-gradient(135deg, #0a1a33, #071122);
-  text-align: center;
-  padding: 80px 20px;
-}
-.hero h1 {
-  font-size: 3rem;
-  color: #00b3b3; /* teal accent */
-}
-.hero p {
-  font-size: 1.2rem;
-  color: #b5b5b5;
-  margin-bottom: 20px;
+.subhead{
+  margin:28px 0 12px;
+  font-size:1.1rem;
+  color:var(--text);
 }
 
-/* Sections */
-section {
-  padding: 50px 0;
+/* ---------- Grid / Cards ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat( auto-fit, minmax(220px,1fr) );
+  gap:18px;
 }
-.alt-bg {
-  background-color: #071122;
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:600;
+  transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
-.section-title {
-  color: #00b3b3; /* teal accent */
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-
-/* Cards */
-.grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-.card {
-  background: #12284a;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 500;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-5px);
-  background: #16325c;
+.card:hover{
+  transform:translateY(-4px);
+  background:var(--card-hover);
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
 }
 
-/* About Me */
-.about-list {
-  list-style: none;
-  padding-left: 0;
+/* ---------- Lists ---------- */
+.bullets{list-style:none;margin:0;padding:0}
+.bullets li{
+  position:relative;
+  padding-left:16px;
+  margin:6px 0;
 }
-.about-list li {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><circle cx="4" cy="4" r="4" fill="%2300b3b3"/></svg>') no-repeat left center;
-  padding-left: 20px;
-  margin-bottom: 8px;
-}
-
-/* CTA */
-.cta {
-  background: #00b3b3; /* teal background */
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-}
-.cta h2 {
-  margin-bottom: 10px;
-  font-size: 2rem;
-}
-.cta p {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
+.bullets li::before{
+  content:"";
+  position:absolute;
+  left:0; top:.7em;
+  width:6px; height:6px;
+  border-radius:50%;
+  background:var(--teal);
 }
 
-/* Buttons */
-.btn-primary {
-  display: inline-block;
-  background: #00b3b3; /* teal */
-  color: #fff; /* white text */
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-block;
+  background:var(--teal);
+  color:var(--white);
+  padding:12px 20px;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .2s ease, background .2s ease;
+  white-space:nowrap;
 }
-.btn-primary:hover {
-  background: #009999; /* darker teal */
-  transform: scale(1.05);
+.btn:hover{background:var(--teal-dark); transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn-dark{
+  background:transparent;
+  border:2px solid var(--teal);
+  color:var(--teal);
+}
+.btn-dark:hover{background:var(--teal); color:var(--navy)}
+
+/* ---------- CTA band ---------- */
+.cta{
+  background:var(--navy-dark);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.cta-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  padding: 20px;
-  background: #071122;
-  color: #888;
+/* ---------- Footer ---------- */
+.footer{
+  background:var(--navy-dark);
+  color:#8a94a6;
+  font-size:.95rem;
+  padding:22px 0;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .hero h1 { font-size: 2rem; }
-  .cta h2 { font-size: 1.5rem; }
+/* ---------- Links ---------- */
+a{color:var(--teal);text-underline-offset:3px}
+a:hover{text-decoration:underline}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 820px){
+  .hero-inner{flex-direction:column; text-align:center}
+  .logo{width:86px}
+  .cta-inner{flex-direction:column; text-align:center}
+}
+@media (prefers-reduced-motion: reduce){
+  .card, .btn{transition:none}
 }
