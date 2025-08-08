@@ -1,3 +1,11 @@
-theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+title: "Infinidatum"
+description: "AI career coaching & corporate advisory by Durai Rajamanickam"
+url: "https://www.infinidatum.com"
+permalink: /blog/:year/:month/:day/:title/
+markdown: kramdown
+
+# GitHub Pages will auto-pick a safe Jekyll version. No custom plugins required.
+# If you later want auto feed/sitemap via plugins, we can add:
+# plugins:
+#   - jekyll-feed
+#   - jekyll-sitemap
