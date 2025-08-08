@@ -8,21 +8,20 @@
   <meta name="description" content="{{ site.description | escape }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url | default: '/' }}">
 
-  <!-- Social basics -->
+  {% assign social_image = page.image | default: '/logo.png' %}
   <meta property="og:title" content="{{ page.title | default: site.title }}" />
   <meta property="og:description" content="{{ site.description }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.url }}{{ page.url | default: '/' }}" />
-  <meta property="og:image" content="{{ '/logo.png' | relative_url }}" />
+  <meta property="og:image" content="{{ social_image | relative_url }}" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{ social_image | relative_url }}" />
 
   <link rel="icon" href="{{ '/logo.png' | relative_url }}" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}" />
 </head>
 <body id="top">
-
-  <!-- Sticky topbar -->
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="{{ '/' | relative_url }}">Infinidatum</a>
@@ -30,6 +29,8 @@
         <a href="{{ '/#services' | relative_url }}">Services</a>
         <a href="{{ '/#about' | relative_url }}">About</a>
         <a href="{{ '/blog/' | relative_url }}">Insights</a>
+        <a href="{{ '/tags/' | relative_url }}">Tags</a>
+        <a href="{{ '/newsletter/' | relative_url }}">Newsletter</a>
         <a class="btn btn-xs" href="https://forms.gle/zY5K7MW2cs1wCYUG6" target="_blank" rel="noopener">Book Session</a>
       </nav>
     </div>
@@ -40,7 +41,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© {{ "now" | date: "%Y" }} Infinidatum LLC</p>
-      <p><a href="mailto:rdmurugan@yahoo.com">rdmurugan@yahoo.com</a> • <a href="https://www.linkedin.com/in/durai-rajamanickam" target="_blank" rel="noopener">LinkedIn</a> • <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+      <p><a href="mailto:durai@infinidatum.net">durai@infinidatum.net</a> • <a href="https://www.linkedin.com/in/durai-rajamanickam" target="_blank" rel="noopener">LinkedIn</a> • <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
     </div>
   </footer>
 </body>
