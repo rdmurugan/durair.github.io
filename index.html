@@ -7,14 +7,29 @@
 
   <!-- SEO -->
   <meta name="description" content="AI career pivot coaching for professionals and corporate leaders. Led by Durai Rajamanickam, a 20+ year AI executive helping you pivot into impactful AI roles with clarity and confidence.">
-  <meta name="keywords" content="AI career coaching, AI pivot, AI consulting, Generative AI, agentic AI, executive coaching, Infinidatum, Durai Rajamanickam">
+  <meta name="keywords" content="AI career coaching, AI pivot, AI consulting, generative AI, agentic AI, executive coaching, Infinidatum, Durai Rajamanickam">
+  <link rel="canonical" href="https://www.infinidatum.com/">
+
+  <!-- Social cards -->
   <meta property="og:title" content="Infinidatum | AI Career Pivot Coaching" />
   <meta property="og:description" content="Pivot into AI with clarity, strategy, and confidence." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.infinidatum.com/" />
   <meta property="og:image" content="logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Infinidatum | AI Career Pivot Coaching" />
+  <meta name="twitter:description" content="Pivot into AI with clarity, strategy, and confidence." />
+  <meta name="twitter:image" content="logo.png" />
 
-  <!-- Fonts & Styles -->
+  <!-- Favicon / icons (put logo.png in repo root) -->
+  <link rel="icon" href="logo.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Fonts (performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 
   <!-- Schema -->
@@ -35,8 +50,21 @@
 </head>
 <body>
 
+  <!-- Sticky mini-nav -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top">Infinidatum</a>
+      <nav class="navlinks">
+        <a href="#who">Who</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a class="btn btn-xs" href="https://forms.gle/zY5K7MW2cs1wCYUG6" target="_blank" rel="noopener">Book Session</a>
+      </nav>
+    </div>
+  </div>
+
   <!-- HERO -->
-  <header class="hero">
+  <header id="top" class="hero">
     <div class="container hero-inner">
       <img src="logo.png" alt="Infinidatum logo" class="logo" />
       <div>
@@ -48,7 +76,7 @@
   </header>
 
   <!-- WHO WE HELP -->
-  <section class="section">
+  <section id="who" class="section">
     <div class="container">
       <h2 class="section-title">Who We Help</h2>
       <p>Mid- and senior-level professionals in IT, operations, healthcare, product, and analytics—and corporate leaders who need pragmatic AI direction. We guide your shift into AI roles with strategic clarity and measurable outcomes.</p>
@@ -56,7 +84,7 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="section alt">
+  <section id="services" class="section alt">
     <div class="container">
       <h2 class="section-title">Our Services</h2>
       <div class="grid">
@@ -70,7 +98,7 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="section">
+  <section id="about" class="section">
     <div class="container">
       <h2 class="section-title">About Durai Rajamanickam</h2>
       <p><strong>Strategic AI & Data Science Executive</strong> with 20+ years driving AI transformation across Fortune 100 and regulated industries. I bridge C-suite priorities and hands-on execution—scaling AI strategy, GenAI/Agentic programs, and responsible governance.</p>
