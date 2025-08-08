@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<section class="section">
+  <div class="container narrow">
+    <h1 class="section-title" style="margin-bottom:6px">{{ page.title }}</h1>
+    <p class="lead" style="color:#b7c1cc">{{ page.date | date: "%B %e, %Y" }}</p>
+    <article class="post-body">
+      {{ content }}
+    </article>
+    <p style="margin-top:24px"><a class="learn" href="{{ '/blog/' | relative_url }}">← Back to Insights</a></p>
+  </div>
+</section>
