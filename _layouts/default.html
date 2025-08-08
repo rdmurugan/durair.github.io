@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title | default: "Infinidatum" }}{% endif %}</title>
 
-  <meta name="description" content="{{ site.description | escape }}">
-  <link rel="canonical" href="{{ site.url }}{{ page.url | default: '/' }}">
+  <meta name="description" content="{{ site.description | default: 'AI career coaching & corporate advisory by Durai Rajamanickam' | escape }}">
+  <link rel="canonical" href="{{ site.url | default: '' }}{{ page.url | default: '/' }}">
 
   {% assign social_image = page.image | default: '/logo.png' %}
   <meta property="og:title" content="{{ page.title | default: site.title }}" />
-  <meta property="og:description" content="{{ site.description }}" />
+  <meta property="og:description" content="{{ site.description | default: 'AI career coaching & advisory' }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ site.url }}{{ page.url | default: '/' }}" />
+  <meta property="og:url" content="{{ site.url | default: '' }}{{ page.url | default: '/' }}" />
   <meta property="og:image" content="{{ social_image | relative_url }}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="{{ social_image | relative_url }}" />
@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}" />
 </head>
 <body id="top">
+
+  <!-- Sticky topbar: appears once, here -->
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="{{ '/' | relative_url }}">Infinidatum</a>
@@ -36,8 +38,10 @@
     </div>
   </header>
 
+  <!-- Page content injected here -->
   {{ content }}
 
+  <!-- Footer: appears once, here -->
   <footer class="footer">
     <div class="container footer-inner">
       <p>© {{ "now" | date: "%Y" }} Infinidatum LLC</p>
