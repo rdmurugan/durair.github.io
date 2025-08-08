@@ -1,37 +1,114 @@
+/* General */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f9f9f9;
-  color: #333;
+  background: #0b0e12;
+  color: #e0e0e0;
+  line-height: 1.6;
 }
 
-header, section, footer {
-  max-width: 800px;
-  margin: 20px auto;
+.container {
+  max-width: 1000px;
+  margin: auto;
   padding: 0 20px;
 }
 
-header {
-  background: #004466;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
-}
-
 h1, h2 {
-  color: #004466;
+  margin-top: 0;
 }
 
-a {
-  color: #0077cc;
+/* Header */
+header {
+  background: linear-gradient(135deg, #1c1f26, #0b0e12);
+  text-align: center;
+  padding: 80px 20px;
+}
+header h1 {
+  font-size: 2.8rem;
+  color: #ffd600;
+}
+header p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* Sections */
+section {
+  padding: 60px 0;
+}
+.alt-bg {
+  background-color: #1c1f26;
+}
+.section-title {
+  color: #ffd600;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card {
+  background: #22252d;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  background: #2c3038;
+}
+
+/* CTA */
+.cta {
+  background: #ffd600;
+  color: #000;
+  text-align: center;
+  padding: 50px 20px;
+}
+.cta h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  background: #000;
+  color: #ffd600;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
   text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
-a:hover {
-  text-decoration: underline;
+.btn-primary:hover {
+  background: #333;
+  transform: scale(1.05);
 }
 
-ul {
-  list-style: disc inside;
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 20px;
+  background: #1c1f26;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .cta h2 {
+    font-size: 1.5rem;
+  }
 }
