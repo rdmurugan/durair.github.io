@@ -1,0 +1,22 @@
+---
+layout: default
+title: "Insights & Posts"
+permalink: /blog/
+---
+
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">Insights</h1>
+    <p class="lead">Short, practical notes on AI careers, GenAI/Agentic patterns, and responsible delivery.</p>
+
+    <div class="grid cards-3">
+      {% for post in site.posts %}
+        <a class="post" href="{{ post.url | relative_url }}">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+          <span class="learn">Read →</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
