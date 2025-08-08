@@ -4,6 +4,7 @@ url: "https://www.infinidatum.com"
 permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
 
+
 # GitHub Pages will auto-pick a safe Jekyll version. No custom plugins required.
 # If you later want auto feed/sitemap via plugins, we can add:
 # plugins:
